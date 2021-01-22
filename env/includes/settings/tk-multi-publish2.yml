@@ -41,7 +41,7 @@ settings.tk-multi-publish2.standalone:
 settings.tk-multi-publish2.3dsmaxplus.asset_step: &settings_tk-multi-publish2_3dsmaxplus_asset_step
   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
   collector_settings:
-      Work Template: max_asset_work
+      Work Template: asset_3dsmax_workfile
   publish_plugins:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py"
@@ -55,7 +55,7 @@ settings.tk-multi-publish2.3dsmaxplus.asset_step: &settings_tk-multi-publish2_3d
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
     settings:
-        Publish Template: max_asset_publish
+        Publish Template: asset_3dsmax_pubfile
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py"
     settings:
@@ -102,7 +102,7 @@ settings.tk-multi-publish2.3dsmax.asset_step: *settings_tk-multi-publish2_3dsmax
 settings.tk-multi-publish2.houdini.asset_step:
   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
   collector_settings:
-      Work Template: houdini_asset_work
+      Work Template: asset_houdini_workfile
   publish_plugins:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py"
@@ -116,7 +116,7 @@ settings.tk-multi-publish2.houdini.asset_step:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
     settings:
-        Publish Template: houdini_asset_publish
+        Publish Template: asset_houdini_pubfile
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
 
@@ -171,7 +171,7 @@ settings.tk-multi-publish2.houdini.asset_step:
 settings.tk-multi-publish2.maya.asset_step:
   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
   collector_settings:
-      Work Template: maya_asset_work
+      Work Template: asset_maya_workfile
   publish_plugins:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py"
@@ -185,7 +185,7 @@ settings.tk-multi-publish2.maya.asset_step:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
     settings:
-        Publish Template: maya_asset_publish
+        Publish Template: asset_maya_pubfile
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py"
     settings:
@@ -306,7 +306,7 @@ settings.tk-multi-publish2.maya.asset_step:
 settings.tk-multi-publish2.photoshop.asset_step:
   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
   collector_settings:
-      Work Template: photoshop_asset_work
+      Work Template: asset_photoshop_workfile
   publish_plugins:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py"
@@ -320,7 +320,7 @@ settings.tk-multi-publish2.photoshop.asset_step:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_document.py"
     settings:
-        Publish Template: photoshop_asset_publish
+        Publish Template: asset_photoshop_pubfile
   - name: Upload for review
     hook: "{engine}/tk-multi-publish2/basic/upload_version.py"
     settings: {}
@@ -439,7 +439,7 @@ settings.tk-multi-publish2.photoshop.asset_step:
 settings.tk-multi-publish2.motion_builder.asset_step:
   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
   collector_settings:
-      Work Template: mobu_asset_work
+      Work Template: asset_mobu_workfile
   publish_plugins:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py"
@@ -453,7 +453,7 @@ settings.tk-multi-publish2.motion_builder.asset_step:
   - name: Publish to Shotgun
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
     settings:
-      Publish Template: mobu_asset_publish
+      Publish Template: asset_mobu_pubfile
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
 

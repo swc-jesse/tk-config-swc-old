@@ -55,8 +55,8 @@ settings.tk-multi-launchapp.shotgun:
 #   location: "@apps.tk-multi-launchapp.location"
 
 # motionbuilder
-settings.tk-multi-launchapp.motionbuilder:
-  engine: tk-motionbuilder
-  windows_path: "@path.windows.motionbuilder"
-  menu_name: MotionBuilder
-  location: "@apps.tk-multi-launchapp.location"
+# settings.tk-multi-launchapp.motionbuilder:
+#   engine: tk-motionbuilder
+#   windows_path: "@path.windows.motionbuilder"
+#   menu_name: MotionBuilder
+#   location: "@apps.tk-multi-launchapp.location"

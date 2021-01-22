@@ -553,6 +553,19 @@ paths:
     asset_houdini_alembic_cache:
         definition: '@asset_work_root/data/caches/alembic/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.abc'
 
+    # Rendered images
+    asset_houdini_render:
+        definition: '@asset_work_root/images/{name}/{houdini.node}/v{version}/{width}x{height}_exr/{Asset}_{name}_v{version}.{SEQ}.exr'
+
+    # Additional mantra outputs
+    asset_houdini_ifd:
+        definition: '@asset_work_root/images/{name}/{houdini.node}/v{version}/{width}x{height}_ifds/{Asset}_{name}_v{version}.{SEQ}.ifd'
+
+    asset_houdini_dcm:
+        definition: '@asset_work_root/images/{name}/{houdini.node}/v{version}/{width}x{height}_dcms/{Asset}_{name}_v{version}.{SEQ}.dcm'
+
+    asset_houdini_extra_plane:
+        definition: '@asset_work_root/images/{name}/{houdini.node}/{aov_name}/v{version}/{width}x{height}_exr/{Asset}_{name}_v{version}.{SEQ}.exr'
 
     # define the location of a work area
     # asset_work_area_houdini:
@@ -767,6 +780,8 @@ paths:
 #
 
 strings:
+
+    dummy_string: "None"
 
     # when a review Version in Shotgun is created inside of Nuke, this is the
     # name that is being given to it (the code field)

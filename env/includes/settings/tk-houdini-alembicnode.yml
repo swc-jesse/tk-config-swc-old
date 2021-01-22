@@ -16,13 +16,13 @@ includes:
 ################################################################################
 
 settings.tk-houdini-alembicnode.asset_step:
-  work_file_template: houdini_asset_work
+  work_file_template: asset_houdini_workfile
   default_node_name: sg_alembic_out
   output_profiles:
   - name: Asset Work Cache
     settings: {}
     color: []
-    output_cache_template: houdini_asset_work_alembic_cache
+    output_cache_template: asset_houdini_alembic_cache
   location: "@apps.tk-houdini-alembicnode.location"
 
 # settings.tk-houdini-alembicnode.shot_step:
