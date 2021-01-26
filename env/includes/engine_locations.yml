@@ -107,3 +107,9 @@ engines.tk-shotgun.location:
 #   type: app_store
 #   name: tk-vred
 #   version: v2.0.8
+
+# Substance Designer
+engines.tk-substancedesigner.location:
+  type: git
+  path: https://github.com/diegogarciahuerta/tk-substancedesigner
+  version: v1.0.0

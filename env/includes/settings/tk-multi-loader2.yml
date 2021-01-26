@@ -377,3 +377,33 @@ settings.tk-multi-loader2.motionbuilder:
 #   actions_hook: "{engine}/tk-multi-loader2/basic/scene_actions.py"
 #   publish_filters: [["sg_status_list", "is_not", null]]
 #   location: "@apps.tk-multi-loader2.location"
+
+# Substance Designer
+settings.tk-multi-loader2.substancedesigner:
+  actions_hook: '{engine}/tk-multi-loader2/tk-substancedesigner_actions.py'
+  action_mappings:
+    Image: [bitmap]
+    Texture: [bitmap]
+    Rendered Image: [bitmap]
+    SVG File: [svg]
+    Font: [font]
+    TTF File: [font]
+    FBX File: [scene]
+    Motion Builder FBX: [scene]
+    IES File: [light_profile]
+    Ies File: [light_profile]
+    MDSDF File: [bsdf_measurement]
+  entities:
+  - caption: Assets
+    entity_type: Asset
+    filters:
+    - [project, is, "{context.project}"]
+    hierarchy: [sg_asset_type, code]
+  - caption: My Tasks
+    entity_type: Task
+    filters:
+    - [task_assignees, is, "{context.user}"]
+    - [project, is, "{context.project}"]
+    hierarchy: [entity, content]
+  publish_filters: [["sg_status_list", "is_not", null]]
+  location: "@apps.tk-multi-loader2.location"

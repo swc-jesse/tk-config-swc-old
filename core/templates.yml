@@ -61,6 +61,30 @@ keys:
         type: int
     segment_name:
         type: str
+    #
+    # Substance Designer
+    #
+    substancedesigner.texture_extension:
+        type: str
+        alias: extension
+
+    substancedesigner.channel:
+        type: str
+        alias: channel
+
+    substancedesigner.package.name:
+        type: str
+        alias: name
+
+    substancedesigner.graph.name:
+        type: str
+
+    substancedesigner.extension:
+        type: str
+        choices:
+            sbs: Substance Design File (.sbs)
+        default: sbs
+        alias: extension
 
     # Represents the optional output name for frames written by the Shotgun Write Node
     # nuke.output:
@@ -450,6 +474,47 @@ paths:
     asset_alembic_cache:
         definition: '@asset_pubs_root/data/caches/{Asset}_{name}.v{version}.abc'
 
+
+    #
+    # Substance Designer
+    #
+
+    # asset
+    # define the location of the work area
+    asset_work_area_substancedesigner:
+        definition: '@asset_work_root/workfiles/substancedesigner'
+
+    # define the location of the publish area
+    asset_publish_area_substancedesigner:
+        definition: '@asset_pubs_root/workfiles/substancedesigner'
+
+    # substancedesigner session snapshots
+    substancedesigner_asset_work:
+        definition: '@asset_work_area_substancedesigner/{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
+
+    # substancedesigner session snapshots
+    substancedesigner_asset_snapshot:
+        definition: '@asset_work_area_substancedesigner/snapshots/{substancedesigner.package.name}.v{version}.{timestamp}.{substancedesigner.extension}'
+
+    # substancedesigner package
+    substancedesigner_asset_package_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
+
+    # substancedesigner SBSAR package
+    substancedesigner_asset_package_archive_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.sbsar'
+
+    # substancedesigner package as a preset
+    substancedesigner_asset_package_mdl_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.mdl'
+
+    # substancedesigner graph output textures
+    substancedesigner_asset_graph_textures_path_publish:
+        definition: '@asset_pubs_root/images/textures/{substancedesigner.package.name}/{substancedesigner.graph.name}/{Asset}_textures_v{version}'
+
+    # substancedesigner graph as mdle
+    substancedesigner_asset_graph_mdle_path_publish:
+        definition: '@asset_pubs_root/images/textures/{substancedesigner.package.name}/{substancedesigner.graph.name}/{Asset}_textures_v{version}.mdle'
 
     #
     # Photoshop
