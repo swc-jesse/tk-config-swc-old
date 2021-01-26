@@ -62,6 +62,12 @@ keys:
     segment_name:
         type: str
 
+    texture_extension:
+        type: str
+        alias: extension
+    texture_name:
+        type: str
+
     # Represents the optional output name for frames written by the Shotgun Write Node
     # nuke.output:
     #     alias: output
@@ -449,6 +455,35 @@ paths:
 
     asset_alembic_cache:
         definition: '@asset_pubs_root/data/caches/{Asset}_{name}.v{version}.abc'
+
+
+    #
+    # Substance Painter
+    #
+
+    asset_substancepainter_work_area:
+        definition: '@asset_work_root/workfiles/substancepainter'
+    asset_substancepainter_pubs_area:
+        definition: '@asset_pubs_root/workfiles/substancepainter'
+
+    asset_substancepainter_workfile:
+        definition: '@asset_work_root/workfiles/substancepainter/{Asset}_{name}.v{version}.spp'
+    asset_substancepainter_pubfile:
+        definition: '@asset_pubs_root/workfiles/substancepainter/{Asset}_{name}.v{version}.spp'
+    asset_substancepainter_snapshot:
+        definition: '@asset_work_root/workfiles/substancepainter/snapshots/{Asset}_{name}.v{version}.{timestamp}.spp'
+
+    # The folder where the textures are exported for a project
+    asset_substancepainter_textures_path_export:
+        definition: '@asset_work_root/workfiles/substancepainter/export'
+
+    # a texture folder publish
+    asset_substancepainter_textures_path_publish:
+        definition: '@asset_pubs_root/images/textures/{Asset}_{name}_v{version}'
+
+    # a texture folder publish
+    asset_substancepainter_texture_path_publish:
+        definition: '@asset_pubs_root/images//textures/{Asset}_{texture_name}_v{version}.{texture_extension}'
 
 
     #

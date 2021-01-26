@@ -107,3 +107,40 @@ engines.tk-shotgun.location:
 #   type: app_store
 #   name: tk-vred
 #   version: v2.0.8
+
+#
+# SWC Custom
+#
+
+engines.tk-substancedesigner.location:
+  name: tk-substancedesigner
+  ### Toolkit Component Entity
+  type: shotgun
+  entity_type: CustomNonProjectEntity13
+  field: sg_uploaded_app
+  version: 955 #tk-substancedesigner-1.0.0
+  ## Dev
+  # type: dev
+  # path: ~/Documents/Github/tk-substancedesigner_swc
+
+engines.tk-substancepainter.location:
+  name: tk-substancepainter
+  ### Toolkit Component Entity
+  type: shotgun
+  entity_type: CustomNonProjectEntity13
+  field: sg_uploaded_app
+  version: 958 #tk-substancepainter-1.2.2
+  ## Dev
+  # type: dev
+  # path: ~/Documents/Github/tk-substancepainter_swc
+
+engines.tk-unreal.location:
+  name: tk-unreal
+  ### Toolkit Component Entity
+  type: shotgun
+  entity_type: CustomNonProjectEntity13
+  field: sg_uploaded_app
+  version: 954 #tk-unreal-1.1.0
+  ## Dev
+  # type: dev
+  # path: ~/Documents/Github/tk-unreal_swc
