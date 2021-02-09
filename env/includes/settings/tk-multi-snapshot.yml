@@ -166,3 +166,15 @@ settings.tk-multi-snapshot.motionbuilder.asset_step:
 #   template_work: vred_asset_work
 #   hook_scene_operation: "{engine}/tk-multi-snapshot/basic/scene_operation.py"
 #   location: "@apps.tk-multi-snapshot.location"
+
+################################################################################
+
+# ---- Substance Designer
+
+# asset step
+settings.tk-multi-snapshot.substancedesigner.asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancedesigner.py"
+  template_snapshot: substancedesigner_asset_snapshot
+  template_work: substancedesigner_asset_work
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"

@@ -656,3 +656,51 @@ settings.tk-multi-workfiles2.motionbuilder.asset_step:
 #       link_field: entity
 #       hierarchy: [step]
 #   location: "@apps.tk-multi-workfiles2.location"
+
+################################################################################
+
+# -- substancedesigner
+
+# project
+settings.tk-multi-workfiles2.substancedesigner.project:
+  allow_task_creation: true
+  create_new_task_hook: "{self}/create_new_task.py"
+  custom_actions_hook: "{self}/custom_actions.py"
+  entities:
+  - caption: Assets
+    entity_type: Task
+    filters:
+    - [entity, type_is, Asset]
+    hierarchy: [entity.Asset.sg_asset_type, entity, step, content]
+  - caption: Shots
+    entity_type: Task
+    filters:
+    - [entity, type_is, Shot]
+    hierarchy: [entity.Shot.sg_sequence, entity, step, content]
+  file_extensions: []
+  hook_copy_file: "{self}/copy_file.py"
+  hook_filter_publishes: default
+  hook_filter_work_files: default
+  hook_scene_operation: "{engine}/tk-multi-workfiles2/scene_operation_tk-substancedesigner.py"
+  launch_at_startup: false
+  my_tasks_extra_display_fields: []
+  saveas_default_name: hook:tk-multi-workfiles2/saveas_default_name_tk-substancedesigner
+  saveas_prefer_version_up: false
+  show_my_tasks: true
+  template_publish:
+  template_publish_area:
+  template_work:
+  template_work_area:
+  version_compare_ignore_fields: []
+  location: "@apps.tk-multi-workfiles2.location"
+
+
+# asset_step
+settings.tk-multi-workfiles2.substancedesigner.asset_step:
+  hook_scene_operation: "{engine}/tk-multi-workfiles2/scene_operation_tk-substancedesigner.py"
+  template_publish: substancedesigner_asset_package_publish
+  template_publish_area: asset_publish_area_substancedesigner
+  template_work: substancedesigner_asset_work
+  template_work_area: asset_work_area_substancedesigner
+  location: "@apps.tk-multi-workfiles2.location"
+  saveas_default_name: hook:tk-multi-workfiles2/saveas_default_name_tk-substancedesigner
