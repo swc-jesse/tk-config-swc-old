@@ -139,6 +139,15 @@ keys:
         default: ma
         alias: extension
 
+    # Photoshop supports two extension types.
+    photoshop_extension:
+        type: str
+        choices:
+            psd: Photoshop (.psd)
+            psb: Large Document Format (.psb)
+        default: psd
+        alias: extension
+
     # needed by the Alias import as reference functionality
     alias.extension:
         type: str
@@ -244,17 +253,17 @@ paths:
 
     # The location of WIP files
     photoshop_shot_work:
-        definition: '@shot_root/work/photoshop/{name}.v{version}.psd'
+        definition: '@shot_root/work/photoshop/{name}.v{version}.{photoshop_extension}'
     shot_work_area_photoshop:
         definition: '@shot_root/work/photoshop'
     # The location of backups of WIP files
     photoshop_shot_snapshot:
-        definition: '@shot_root/work/photoshop/snapshots/{name}.v{version}.{timestamp}.psd'
+        definition: '@shot_root/work/photoshop/snapshots/{name}.v{version}.{timestamp}.{photoshop_extension}'
     # The location of published files
     shot_publish_area_photoshop:
         definition: '@shot_root/publish/photoshop'
     photoshop_shot_publish:
-        definition: '@shot_root/publish/photoshop/{name}.v{version}.psd'
+        definition: '@shot_root/publish/photoshop/{name}.v{version}.{photoshop_extension}'
 
     #
     # After Effects
@@ -445,17 +454,17 @@ paths:
 
     # The location of WIP files
     photoshop_asset_work:
-        definition: '@asset_root/files/photoshop/{name}.v{version}.psd'
+        definition: '@asset_root/files/photoshop/{name}.v{version}.{photoshop_extension}'
     asset_work_area_photoshop:
         definition: '@asset_root/files/photoshop'
     # The location of backups of WIP files
     photoshop_asset_snapshot:
-        definition: '@asset_root/files/photoshop/snapshots/{name}.v{version}.{timestamp}.psd'
+        definition: '@asset_root/files/photoshop/snapshots/{name}.v{version}.{timestamp}.{photoshop_extension}'
     # The location of published files
     asset_publish_area_photoshop:
         definition: '@asset_publish_root/files/photoshop'
     photoshop_asset_publish:
-        definition: '@asset_publish_root/files/photoshop/{name}.v{version}.psd'
+        definition: '@asset_publish_root/files/photoshop/{name}.v{version}.{photoshop_extension}'
 
     #
     # after effects
